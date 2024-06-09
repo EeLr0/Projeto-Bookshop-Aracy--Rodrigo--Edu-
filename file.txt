@@ -1,0 +1,1 @@
+Para quem tiver problemas com o JsonEncoder
