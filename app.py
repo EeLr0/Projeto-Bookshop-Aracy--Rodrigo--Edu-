@@ -356,7 +356,9 @@ def get_livros_cliente(cliente_nome):
 
 ##  c. Indicação do cliente mais antigo e do número de livros por ele adquiridos;
 @app.route('/cliente/maisAntigo', methods=['GET'])
-
+def get_cliente_mais_anigo():
+    cliente = Cliente.query.order_by(Cliente.ano_subscricao).first_or_404()
+    return jsonify({"cliente": cliente.to_json()})
 
 
 #d. Lista dos clientes que compraram um determinado livro;
